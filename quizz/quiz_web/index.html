@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interativo - Teoria da Computação</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <style>
+       .meudropum:hover{
+        text-decoration: underline 2px;
+        font-weight: bolder;
+        font-size: calc(1.3rem);
+        color:blue;
+        
+       }
+       .meus    {
+        display: flex;
+        position: absolute;
+        margin-top: -40%;
+        padding: 2%;
+        transition:ease-in-out 0.3s;
+        justify-content: center;
+      
+       }
+    
+    </style>
+    <div class="dropdown show meus  ">
+        <button class="btn btn-primary dropdown-toggle" type="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                    Baixar Contéudos da matéria
+                    
+                </button>
+        <div class="dropdown-menu active fw-bolder" aria-labelledby="triggerId">
+            <a class="dropdown-item fw-bolder meudropum" href="/ResumoRapido.rar" download="/apostilas.rar">Resumo da matéria</a>
+            <a class="dropdown-item fw-bolder meudropum " href="/apostilas.rar" download="/apostilas.rar"> Apostilas</a>
+        </div>
+    </div>
+ 
+    <div class="quiz-container">
+     
+        <!-- TELA INICIAL -->
+        <div id="start-screen" class="screen active">
+            
+            <div class="start-icon">🧠</div>
+            <h1>Quiz: Teoria da Computação</h1>
+            <p>Teste seus conhecimentos com questões rotativas baseadas nos materiais de estudo.</p>
+            <div class="info-badge">67 questões disponíveis</div>
+            <button id="start-btn" class="btn">Começar Quiz</button>
+        </div>
+
+        <!-- TELA DO QUIZ -->
+        <div id="quiz-screen" class="screen">
+            <div class="question-counter" id="question-counter">Pergunta 1 de 67</div>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <div class="question-header">
+                <h2 id="question-text">Pergunta</h2>
+            </div>
+            <div class="options-container" id="options-container">
+                <!-- Opções injetadas pelo JS -->
+            </div>
+            <div class="feedback" id="feedback"></div>
+            <button id="next-btn" class="btn hide">Próxima Pergunta ➜</button>
+        </div>
+
+        <!-- TELA DE RESULTADO -->
+        <div id="result-screen" class="screen">
+            <div class="result-icon" id="result-icon">🏆</div>
+            <h2>Resultado Final</h2>
+            <div class="score-container">
+                <div class="score-card correct-card">
+                    <span class="score-number" id="score">0</span>
+                    <span class="score-label">✅ Acertos</span>
+                </div>
+                <div class="score-card wrong-card">
+                    <span class="score-number" id="wrong-score">0</span>
+                    <span class="score-label">❌ Erros</span>
+                </div>
+                <div class="score-card total-card">
+                    <span class="score-number" id="total-questions">0</span>
+                    <span class="score-label">📋 Total</span>
+                </div>
+            </div>
+            <p id="result-msg" class="result-msg"></p>
+            <button id="restart-btn" class="btn">🔄 Tentar Novamente</button>
+            
+        </div>
+
+
+
+    </div>
+
+    <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
